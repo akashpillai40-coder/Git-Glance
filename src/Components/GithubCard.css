@@ -1,0 +1,104 @@
+.github-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.github-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #6c47ff;
+  flex-shrink: 0;
+}
+
+.github-info {
+  flex: 1;
+}
+
+.github-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f1729;
+  margin-bottom: 4px;
+}
+
+.github-bio {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.github-location {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.github-follow {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.github-follow span {
+  font-weight: 600;
+  color: #6c47ff;
+}
+
+.github-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.github-stat {
+  background: #f4f5f7;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.github-links {
+  display: flex;
+  gap: 12px;
+}
+
+.github-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6c47ff;
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1.5px solid #6c47ff;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.github-link:hover {
+  background: #6c47ff;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .github-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .github-stats {
+    justify-content: center;
+  }
+  .github-links {
+    justify-content: center;
+  }
+}

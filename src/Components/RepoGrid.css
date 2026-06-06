@@ -1,0 +1,22 @@
+.repo-grid {
+  margin-bottom: 32px;
+}
+
+.repo-grid h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f1729;
+  margin-bottom: 16px;
+}
+
+.repos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .repos-container {
+    grid-template-columns: 1fr;
+  }
+}

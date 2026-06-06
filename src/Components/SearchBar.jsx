@@ -1,5 +1,6 @@
-import React from 'react'
-import { useState } from 'react'
+
+import React, { useState } from 'react'
+import './SearchBar.css'
 
 
 const SearchBar = ({ userSearch }) => {
@@ -14,18 +15,20 @@ const SearchBar = ({ userSearch }) => {
        
     };
   return (
-    <>
+    <div className='search-wrapper'>
     <form onSubmit={handleSubmit}>
         <input 
+         className="search-input"
         type='text' 
         placeholder='Search Github user'
         onChange={(e) => setUsername(e.target.value)}
         value={username}
 
          />
-         <button type='submit'>Search</button>
+        
+         <button className="search-btn" type='submit'>Search</button>
     </form>
-    </>
+    </div>
   )
 }
 

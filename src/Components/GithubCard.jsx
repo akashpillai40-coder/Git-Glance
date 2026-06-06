@@ -1,62 +1,40 @@
-import React from "react";
+import './GithubCard.css'
+import React from 'react'
 
 const GithubCard = ({ user }) => {
+  if (!user) return null
   return (
-  <div>
-    {/*Avatar*/}
-    {user.avatar_url && (
-      <img 
-      src={user.avatar_url}
-      alt={user.login}
-      width={150}
-      />
-    )}
-   
-    {/*Username*/}
-    
-    <h2>{user.name || user.login}</h2>
-    
-    {/*Bio*/}
-    {user.bio && <p>{user.bio}</p>}
-
-    {user.location && <p>{user.location}</p>}
-    {/*Followers and Following*/}
-    {user.followers && (
-        <p>Followers: {user.followers} | Following: {user.following}</p>
-    
-    )}
-      {/* Website */}
-
-      {user.blog && (
-        <a
-          href={user.blog.startsWith('http') ? user.blog : `https://${user.blog}`}
-          > Portfolio 
-              
-        </a>
+    <div className="github-card">
+      {user.avatar_url && (
+        <img className="github-avatar" src={user.avatar_url} alt={user.login} />
       )}
-      {/* Stats row */}
-      <div>
-        {user.public_repos && (
-          <span>Repos: {user.public_repos}</span>
+      <div className="github-info">
+        <h2 className="github-name">{user.name || user.login}</h2>
+        {user.bio && <p className="github-bio">{user.bio}</p>}
+        {user.location && <p className="github-location">📍 {user.location}</p>}
+        {user.followers && (
+          <p className="github-follow">
+            <span>{user.followers}</span> Followers · <span>{user.following}</span> Following
+          </p>
         )}
-        {user.public_gists && (
-          <span>Gists: {user.public_gists}</span>
-        )}
+        <div className="github-stats">
+          {user.public_repos && <span className="github-stat">📁 {user.public_repos} Repos</span>}
+          {user.public_gists && <span className="github-stat">📝 {user.public_gists} Gists</span>}
+        </div>
+        <div className="github-links">
+          {user.blog && (
+            <a className="github-link" href={user.blog.startsWith('http') ? user.blog : `https://${user.blog}`}>
+              Portfolio
+            </a>
+          )}
+          {user.html_url && (
+            <a className="github-link" href={user.html_url} target="_blank" rel="noopener noreferrer">
+              View Profile
+            </a>
+          )}
+        </div>
       </div>
-      {/* Github Link */}
-      {user.html_url && ( 
-        <a  
-       href={user.html_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        >View Profile</a> 
-        )}
-      
-    
-      
-    
     </div>
   )
-};
-
-export default GithubCard;
+}
+export default GithubCard
